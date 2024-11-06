@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="281.0" prefWidth="391.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.example.bigassignment.RegisterController">
+    <children>
+        <Label layoutX="140.0" layoutY="20.0" text="Đăng Ký" />
+        <TextField fx:id="usernameTextField" layoutX="80.0" layoutY="60.0" promptText="Tên người dùng" />
+        <PasswordField fx:id="passwordTextField" layoutX="80.0" layoutY="100.0" promptText="Mật khẩu" />
+        <TextField fx:id="fullNameTextField" layoutX="80.0" layoutY="140.0" promptText="Họ tên" />
+        <TextField fx:id="emailTextField" layoutX="80.0" layoutY="180.0" promptText="Email" />
+        <Button layoutX="160.0" layoutY="220.0" onAction="#registerButtonAction" text="Đăng Ký" />
+        <Label fx:id="registerMessageLabel" layoutX="80.0" layoutY="260.0" textFill="red" />
+        <Button text="Back" layoutX="80.0" layoutY="260.0" onAction="#backToLoginScene" />
+
+    </children>
+</AnchorPane>
