@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LibrarianDAO {
-    public boolean validateLibrarianLogin(String username, String password) {
+    public static boolean validateLibrarianLogin(String username, String password) {
         String query = "SELECT * FROM librarian WHERE username = ? AND password = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -23,7 +23,7 @@ public class LibrarianDAO {
     }
 
     public void addLibrarian(String username, String password, String fullName, String email) {
-        String query = "INSERT INTO librarian (username, password, full_name, email, hire_date) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO librarian (username, password, full_name, email) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
 

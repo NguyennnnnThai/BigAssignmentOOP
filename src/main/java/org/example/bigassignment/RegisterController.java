@@ -36,8 +36,8 @@ public class RegisterController {
         String email = emailTextField.getText();
 
         if (!username.isBlank() && !password.isBlank() && !fullName.isBlank() && !email.isBlank()) {
-            LibrarianDAO userDAO = new LibrarianDAO();
-            userDAO.addLibrarian(username, password, fullName, email);
+            LibrarianDAO librarianDAO = new LibrarianDAO();
+            librarianDAO.addLibrarian(username, password, fullName, email);
             registerMessageLabel.setText("Đăng ký thành công!");
         } else {
             registerMessageLabel.setText("Vui lòng điền đầy đủ thông tin.");

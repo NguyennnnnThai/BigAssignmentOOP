@@ -50,7 +50,7 @@ public class LoginSceneController implements Initializable {
         if (!username.isBlank() && !password.isBlank()) {
             LibrarianDAO userDAO = new LibrarianDAO(); // Hoặc LibrarianDAO nếu dùng cho thủ thư
 
-            boolean isValidUser = userDAO.validateLibrarianLogin(username, password);
+            boolean isValidUser = LibrarianDAO.validateLibrarianLogin(username, password);
             if (isValidUser) {
                 loginMessageLabel.setText("Đăng nhập thành công!");
                 loadInterfaceScene(event, username);
@@ -102,8 +102,6 @@ public class LoginSceneController implements Initializable {
             root = loader.load();
 
             InterfaceSceneController interfaceSceneController = loader.getController();
-            interfaceSceneController.displayName(username);
-
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
