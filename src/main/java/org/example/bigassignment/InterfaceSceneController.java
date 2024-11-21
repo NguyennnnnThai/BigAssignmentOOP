@@ -1,5 +1,7 @@
 package org.example.bigassignment;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,9 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class InterfaceSceneController implements Initializable {
@@ -18,13 +23,34 @@ public class InterfaceSceneController implements Initializable {
 
     @FXML
     private ChoiceBox<String> myChoiceBox;
+    @FXML
+    private Label clockLabel;
 
     private String[] options = {"Đăng xuất", "Cài đặt tài khoản", "Chế độ ban đêm"};
+    private static final DateTimeFormatter DATE_TIME_FORMATTER  = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         myChoiceBox.getItems().addAll(options);
         myChoiceBox.setOnAction(event -> handleChoiceBoxSelection());
+
+        startClock();
+    }
+
+    private void startClock() {
+        // Tạo Timeline để cập nhật thời gian mỗi giây
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0), event -> updateClock()),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE); // Lặp vô hạn
+        timeline.play(); // Bắt đầu
+    }
+
+    private void updateClock() {
+        LocalDateTime now = LocalDateTime.now();
+        String formattedTime = now.format(DATE_TIME_FORMATTER); // Định dạng thời gian
+        clockLabel.setText(formattedTime); // Cập nhật thời gian lên Label
     }
 
     private void handleChoiceBoxSelection() {

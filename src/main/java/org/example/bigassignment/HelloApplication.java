@@ -5,17 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 import java.io.IOException;
 
 
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Image icon = new Image("icon.png");
+        Image icon = new Image(HelloApplication.class.getResource("/org/example/bigassignment/Image/icon.png").toString());
         stage.getIcons().add(icon);
         stage.setTitle("Library Management");
         //  stage.setResizable(false); // hàm giúp không cho phép thay đổi kích thước cửa sổ
@@ -27,7 +24,6 @@ public class HelloApplication extends Application {
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

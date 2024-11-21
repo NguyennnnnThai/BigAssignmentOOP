@@ -1,5 +1,22 @@
-#testButton{
-    -fx-background-color: green;
-    -fx-text-fill: white;
+#VienNgang{
+    -fx-background-color: #abcbed;
 }
 
+#LabelVien{
+    -fx-text-fill: black;
+}
+
+#VienDoc{
+    -fx-background-color: #909ba6;
+}
+
+#buttonHide{
+    -fx-background-color: transparent;
+}
+
+#hopThongTin{
+    -fx-background-color: #d4fcc7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10px;
+    -fx-border-color: black;
+}
