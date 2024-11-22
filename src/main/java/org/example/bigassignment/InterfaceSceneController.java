@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -22,9 +25,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class InterfaceSceneController implements Initializable {
 
@@ -57,6 +58,19 @@ public class InterfaceSceneController implements Initializable {
     @FXML
     private NumberAxis yAxis;
 
+    @FXML
+    private TableView<OverdueBorrow> overdueTable;
+
+    @FXML
+    private TableColumn<OverdueBorrow, Integer> borrowIdColumn;
+
+    @FXML
+    private TableColumn<OverdueBorrow, Integer> bookIdColumn;
+
+    @FXML
+    private TableColumn<OverdueBorrow, String> bookTitleColumn;
+
+
     private String[] options = {"Đăng xuất", "Cài đặt tài khoản", "Chế độ ban đêm"};
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
@@ -77,6 +91,15 @@ public class InterfaceSceneController implements Initializable {
         // Cấu hình thêm cho yAxis
         yAxis.setLabel("Số lượng sách");
         yAxis.setTickUnit(10); // Khoảng cách giữa các giá trị trên trục y
+
+        // Liên kết cột với thuộc tính của lớp OverdueBorrow
+        borrowIdColumn.setCellValueFactory(new PropertyValueFactory<>("borrowId"));
+        bookIdColumn.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        bookTitleColumn.setCellValueFactory(new PropertyValueFactory<>("bookTitle"));
+
+        // Tải dữ liệu từ cơ sở dữ liệu và đưa vào TableView
+        List<OverdueBorrow> overdueList = getOverdueBorrows();
+        overdueTable.getItems().addAll(overdueList);
     }
 
     private void startClock() {
@@ -324,5 +347,31 @@ public class InterfaceSceneController implements Initializable {
     private void updateBookDistributionBarChart() {
         bookDistributionBarChart.getData().clear(); // Xóa dữ liệu cũ nếu có
         bookDistributionBarChart.getData().add(getBookDistributionByGenre());
+    }
+
+    public List<OverdueBorrow> getOverdueBorrows() {
+        List<OverdueBorrow> overdueList = new ArrayList<>();
+        String query = """
+        SELECT b.borrow_id, b.book_id, bo.title
+        FROM borrow b
+        JOIN book bo ON b.book_id = bo.book_id
+        WHERE b.returned = 0 AND b.return_date < NOW();
+        """;
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                int borrowId = resultSet.getInt("borrow_id");
+                int bookId = resultSet.getInt("book_id");
+                String bookTitle = resultSet.getString("title");
+
+                overdueList.add(new OverdueBorrow(borrowId, bookId, bookTitle));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return overdueList;
     }
 }

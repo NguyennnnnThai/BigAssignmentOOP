@@ -9,6 +9,8 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -99,11 +101,11 @@
                   <Label fx:id="overdueBooksLabel" layoutX="85.0" layoutY="35.0" text="Label" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="21.0" layoutY="100.0" prefHeight="100.0" prefWidth="300.0">
+            <AnchorPane layoutX="21.0" layoutY="100.0" prefHeight="150.0" prefWidth="544.0">
                <children>
-                  <LineChart id="hopThongTin" fx:id="borrowLineChart" layoutX="-1.0" prefHeight="234.4" prefWidth="150.0" stylesheets="@CSS/outfit.css" title="Thống kê mượn sách" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <LineChart id="hopThongTin" fx:id="borrowLineChart" layoutX="-1.0" prefHeight="220.0" prefWidth="520.0" stylesheets="@CSS/outfit.css" title="Thống kê mượn sách" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
-                      <CategoryAxis label="Tháng" side="BOTTOM" />
+                      <CategoryAxis label="Tháng" maxWidth="80.0" minWidth="80.0" prefHeight="19.0" prefWidth="80.0" side="LEFT" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis label="Số lượng người mượn" side="LEFT" />
@@ -111,9 +113,9 @@
                   </LineChart>
                </children>
             </AnchorPane>
-            <AnchorPane id="hopThongTin" layoutX="350.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css">
+            <AnchorPane id="hopThongTin" layoutX="582.0" layoutY="100.0" prefHeight="158.0" prefWidth="202.0" stylesheets="@CSS/outfit.css">
                <children>
-                  <BarChart fx:id="bookDistributionBarChart" layoutX="-137.0" layoutY="-123.0" prefHeight="279.2" prefWidth="364.8" title="Phân bố" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BarChart fx:id="bookDistributionBarChart" layoutX="-137.0" layoutY="-123.0" prefHeight="100.0" prefWidth="201.6" title="Phân bố" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" fx:id="xAxis" />
                     </xAxis>
@@ -123,15 +125,22 @@
                   </BarChart>
                </children>
             </AnchorPane>
-            <AnchorPane id="clock-label" layoutX="21.0" layoutY="268.0" prefHeight="150.0" prefWidth="300.0" stylesheets="@CSS/Clock.css">
+            <AnchorPane id="clock-label" layoutX="583.0" layoutY="273.0" prefHeight="150.0" prefWidth="202.0" stylesheets="@CSS/Clock.css">
                <children>
                   <Label id="clock-label" fx:id="clockLabel" alignment="CENTER" layoutX="11.200000000000001" layoutY="10.600000000000001" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/Clock.css" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane id="hopThongTin" layoutX="580.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css">
+            <AnchorPane id="hopThongTin" layoutX="414.0" layoutY="273.0" maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@CSS/outfit.css">
                <children>
-                  <PieChart fx:id="borrowPieChart" clockwise="false" layoutX="-150.0" layoutY="-122.0" prefHeight="280.0" prefWidth="352.0" title="Tỉ lệ sách đã mượn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <PieChart fx:id="borrowPieChart" clockwise="false" labelLineLength="10.0" layoutX="13.600000000000001" layoutY="1.6" prefHeight="150.0" prefWidth="150.0" title="Tỉ lệ sách đã mượn" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
                </children></AnchorPane>
+            <TableView fx:id="overdueTable" layoutX="21.0" layoutY="273.0" prefHeight="147.0" prefWidth="373.0">
+              <columns>
+                <TableColumn fx:id="bookTitleColumn" prefWidth="124.3" text="title" />
+                <TableColumn fx:id="bookIdColumn" prefWidth="124.3" text="borrow_id" />
+                  <TableColumn fx:id="borrowIdColumn" prefWidth="124.3" text="book_id" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>
