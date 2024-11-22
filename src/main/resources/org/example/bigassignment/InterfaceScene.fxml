@@ -6,11 +6,11 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.InterfaceSceneController">
    <children>
@@ -63,6 +63,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
+                  <Label fx:id="totalBooksLabel" layoutX="97.0" layoutY="35.0" text="Label" />
                </children>
             </AnchorPane>
             <AnchorPane id="hopThongTin" layoutX="221.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
@@ -73,6 +74,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
+                  <Label fx:id="totalUsersLabel" layoutX="85.0" layoutY="35.0" text="Label" />
                </children>
             </AnchorPane>
             <AnchorPane id="hopThongTin" layoutX="614.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
@@ -94,28 +96,29 @@
                      </font>
                   </Label>
                   <FontAwesomeIconView glyphName="TIMES" layoutX="32.0" layoutY="37.0" size="12" />
+                  <Label fx:id="overdueBooksLabel" layoutX="85.0" layoutY="35.0" text="Label" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="21.0" layoutY="100.0" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <LineChart id="hopThongTin" layoutX="-1.0" prefHeight="234.4" prefWidth="150.0" stylesheets="@CSS/outfit.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <LineChart id="hopThongTin" fx:id="borrowLineChart" layoutX="-1.0" prefHeight="234.4" prefWidth="150.0" stylesheets="@CSS/outfit.css" title="Thống kê mượn sách" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis label="Tháng" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis label="Số lượng người mượn" side="LEFT" />
                     </yAxis>
                   </LineChart>
                </children>
             </AnchorPane>
-            <AnchorPane id="hopThongTin" layoutX="500.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css">
+            <AnchorPane id="hopThongTin" layoutX="350.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css">
                <children>
-                  <BarChart layoutX="-137.0" layoutY="-123.0" prefHeight="279.2" prefWidth="364.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <BarChart fx:id="bookDistributionBarChart" layoutX="-137.0" layoutY="-123.0" prefHeight="279.2" prefWidth="364.8" title="Phân bố" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis fx:id="yAxis" side="LEFT" />
                     </yAxis>
                   </BarChart>
                </children>
@@ -125,7 +128,10 @@
                   <Label id="clock-label" fx:id="clockLabel" alignment="CENTER" layoutX="11.200000000000001" layoutY="10.600000000000001" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/Clock.css" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane id="hopThongTin" layoutX="395.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css" />
+            <AnchorPane id="hopThongTin" layoutX="580.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <PieChart fx:id="borrowPieChart" clockwise="false" layoutX="-150.0" layoutY="-122.0" prefHeight="280.0" prefWidth="352.0" title="Tỉ lệ sách đã mượn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
          </children>
       </AnchorPane>
    </children>
