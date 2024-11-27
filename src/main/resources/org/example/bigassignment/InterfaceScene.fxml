@@ -24,7 +24,7 @@
       </AnchorPane>
       <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="78.0" stylesheets="@CSS/outfit.css">
          <children>
-            <JFXButton id="buttonHide" layoutX="1.0" layoutY="-1.0" minWidth="46.0" prefHeight="57.0" prefWidth="78.0" stylesheets="@CSS/outfit.css">
+            <JFXButton id="buttonHide" layoutX="1.0" layoutY="-1.0" minWidth="46.0" prefHeight="80.0" prefWidth="80.0" stylesheets="@CSS/outfit.css">
                <graphic>
                   <FontAwesomeIconView glyphName="HOME" size="20" text="" wrappingWidth="19.199975585937523">
                      <font>
@@ -33,22 +33,22 @@
                   </FontAwesomeIconView>
                </graphic>
             </JFXButton>
-            <JFXButton id="buttonHide" layoutX="15.0" layoutY="212.0" minWidth="28.0" prefHeight="28.0" prefWidth="28.0" stylesheets="@CSS/outfit.css">
+            <JFXButton id="buttonHide" layoutX="2.0" layoutY="228.0" minWidth="28.0" prefHeight="80.0" prefWidth="80.0" stylesheets="@CSS/outfit.css">
                <graphic>
                   <FontAwesomeIconView glyphName="EDIT" size="20" />
                </graphic>
             </JFXButton>
-            <JFXButton id="buttonHide" layoutX="15.0" layoutY="77.0" minWidth="46.0" prefHeight="34.0" prefWidth="46.0" stylesheets="@CSS/outfit.css">
+            <JFXButton id="buttonHide" layoutY="79.0" minWidth="46.0" prefHeight="80.0" prefWidth="80.0" stylesheets="@CSS/outfit.css">
                <graphic>
                   <FontAwesomeIconView glyphName="BOOK" size="20" />
                </graphic>
             </JFXButton>
-            <JFXButton id="buttonHide" layoutX="17.0" layoutY="148.0" minWidth="37.0" prefHeight="28.0" prefWidth="37.0" stylesheets="@CSS/outfit.css">
+            <JFXButton id="buttonHide" layoutX="-1.0" layoutY="148.0" minWidth="37.0" prefHeight="80.0" prefWidth="80.0" stylesheets="@CSS/outfit.css">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" size="20" />
                </graphic>
             </JFXButton>
-            <JFXButton id="buttonHide" layoutX="17.0" layoutY="286.0" minWidth="39.0" prefHeight="28.0" prefWidth="39.0" stylesheets="@CSS/outfit.css">
+            <JFXButton id="buttonHide" layoutY="308.0" minWidth="39.0" prefHeight="80.0" prefWidth="80.0" stylesheets="@CSS/outfit.css">
                <graphic>
                   <FontAwesomeIconView glyphName="LIST" size="20" />
                </graphic>
