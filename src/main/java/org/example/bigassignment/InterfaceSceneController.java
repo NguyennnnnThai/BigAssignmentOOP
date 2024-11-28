@@ -3,16 +3,15 @@ package org.example.bigassignment;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -29,6 +28,10 @@ import java.util.*;
 
 public class InterfaceSceneController implements Initializable {
 
+
+    Stage stage;
+    Scene scene;
+    Parent root;
 
     @FXML
     private ChoiceBox<String> myChoiceBox;
@@ -131,23 +134,38 @@ public class InterfaceSceneController implements Initializable {
     }
 
     private void logout() {
-        try {
-            // Tải FXML của màn hình đăng nhập
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
-            Parent loginRoot = loader.load();
+        // Tạo cảnh báo xác nhận
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Xác nhận đăng xuất");
+        alert.setHeaderText(null);
+        alert.setContentText("Bạn có chắc chắn muốn đăng xuất?");
 
-            // Lấy Stage hiện tại từ một control trên giao diện hiện tại
-            Stage currentStage = (Stage) myChoiceBox.getScene().getWindow();
+        // Hiển thị cảnh báo và chờ phản hồi từ người dùng
+        Optional<ButtonType> result = alert.showAndWait();
 
-            // Thiết lập lại cảnh với LoginScene
-            Scene loginScene = new Scene(loginRoot);
-            currentStage.setScene(loginScene);
-            currentStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Xử lý ngoại lệ, có thể hiển thị thông báo lỗi cho người dùng nếu cần
+        // Kiểm tra xem người dùng đã chọn "OK" hay không
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                // Tải FXML của màn hình đăng nhập
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
+                Parent loginRoot = loader.load();
+
+                // Lấy Stage hiện tại từ một control trên giao diện hiện tại
+                Stage currentStage = (Stage) myChoiceBox.getScene().getWindow();
+
+                // Thiết lập lại cảnh với LoginScene
+                Scene loginScene = new Scene(loginRoot);
+                currentStage.setScene(loginScene);
+                currentStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Xử lý ngoại lệ, có thể hiển thị thông báo lỗi cho người dùng nếu cần
+            }
+        } else {
+            // Nếu người dùng chọn "Cancel", không làm gì cả (vẫn giữ nguyên màn hình hiện tại)
         }
     }
+
 
     private void toggleNightMode() {
         // Thêm mã để bật/tắt chế độ ban đêm
@@ -374,4 +392,16 @@ public class InterfaceSceneController implements Initializable {
         }
         return overdueList;
     }
+
+
+    // Hàm chuyển sang trang mượn sách
+    // Hàm chuyển sang mục Quản lý sách
+    public void switchToBookManagement(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("BookManagement.fxml"));
+        Scene scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

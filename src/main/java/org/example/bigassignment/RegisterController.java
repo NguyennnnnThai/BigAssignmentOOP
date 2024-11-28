@@ -47,7 +47,7 @@ public class RegisterController {
     @FXML
     private void backToLoginScene(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bigassignment/LoginScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bigassignment/CSS/LoginScene.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((    Node) event.getSource()).getScene().getWindow();

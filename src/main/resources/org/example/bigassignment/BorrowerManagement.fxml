@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.BorrowerManagementController">
+    <children>
+        <AnchorPane id="VienNgang" prefHeight="80.0" prefWidth="880.0" stylesheets="@CSS/outfit.css">
+            <children>
+                <Label id="LabelVien" alignment="CENTER" layoutX="46.0" layoutY="20.0" prefHeight="41.0" prefWidth="150.0" stylesheets="@CSS/outfit.css" text="Welcome" textFill="#ece3e3">
+                    <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+                    </font></Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="105.0" stylesheets="@CSS/outfit.css">
+            <children>
+                <JFXButton layoutX="2.0" layoutY="51.0" onAction="#switchToHome" ripplerFill="#140000" text="Home">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="#08154f" glyphName="HOME" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton layoutX="5.0" layoutY="127.0" onAction="#switchToQuanLySach" text="Book">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="BOOK" />
+                    </graphic>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton layoutY="197.0" text="Borrower" textFill="#1c1c99">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="USER" />
+                    </graphic>
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton layoutX="6.0" layoutY="279.0" text="Loan">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
+                    </graphic>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="106.0" layoutY="80.0" prefHeight="440.0" prefWidth="773.0" />
+    </children>
+</AnchorPane>
