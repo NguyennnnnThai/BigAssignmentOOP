@@ -36,8 +36,8 @@ public class RegisterController {
         String email = emailTextField.getText();
 
         if (!username.isBlank() && !password.isBlank() && !fullName.isBlank() && !email.isBlank()) {
-            LibrarianDAO userDAO = new LibrarianDAO();
-            userDAO.addLibrarian(username, password, fullName, email);
+            LibrarianDAO librarianDAO = new LibrarianDAO();
+            librarianDAO.addLibrarian(username, password, fullName, email);
             registerMessageLabel.setText("Đăng ký thành công!");
         } else {
             registerMessageLabel.setText("Vui lòng điền đầy đủ thông tin.");
@@ -47,7 +47,7 @@ public class RegisterController {
     @FXML
     private void backToLoginScene(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bigassignment/LoginScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/bigassignment/CSS/LoginScene.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((    Node) event.getSource()).getScene().getWindow();

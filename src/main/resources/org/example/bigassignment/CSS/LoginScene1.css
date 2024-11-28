@@ -1,0 +1,40 @@
+.custom-background {
+    -fx-background-color: #e8e8e8;
+    -fx-background-radius: 15;
+    -fx-background-insets: 0;
+}
+/* Nút với hiệu ứng đổ bóng */
+.button {
+    -fx-background-color: #fab255; /* Màu nền xanh dương */
+    -fx-text-fill: #e8e8e8; /* Màu chữ trắng */
+    -fx-font-size: 15px; /* Kích thước chữ */
+    -fx-font-weight: bold; /* Chữ in đậm */
+    -fx-padding: 4px 10px; /* Khoảng cách bên trong nút */
+    -fx-background-radius: 20px; /* Bo góc tròn */
+    -fx-border-radius: 20px; /* Bo góc cho viền */
+}
+
+/* Hiệu ứng hover */
+.button:hover {
+    -fx-background-color: #0056b3; /* Màu nền thay đổi khi hover */
+}
+
+/* Hiệu ứng click */
+.button:pressed {
+    -fx-background-color: #004085; /* Màu nền khi nhấn */
+    -fx-border-color: #003366; /* Màu viền khi nhấn */
+}
+#test{
+    -fx-border-width: 0;
+    -fx-border-color: black;
+    -fx-background-color: transparent;
+}
+
+#buttonHide{
+    -fx-background-color: transparent;
+}
+#VBOX{
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+}
