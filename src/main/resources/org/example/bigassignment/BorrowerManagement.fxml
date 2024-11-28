@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -52,6 +54,14 @@
                 </JFXButton>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="106.0" layoutY="80.0" prefHeight="440.0" prefWidth="773.0" />
+        <AnchorPane layoutX="106.0" layoutY="80.0" prefHeight="440.0" prefWidth="773.0">
+         <children>
+            <TableView layoutX="12.0" layoutY="9.0" prefHeight="418.0" prefWidth="523.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
     </children>
 </AnchorPane>
