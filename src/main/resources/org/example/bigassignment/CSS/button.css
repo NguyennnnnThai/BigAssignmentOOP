@@ -1,0 +1,16 @@
+/* styles.css */
+
+button {
+    background-color: #add8e6; /* Màu xanh blue nhạt */
+    color: white;              /* Màu chữ trắng */
+    border: none;              /* Không viền */
+    border-radius: 12px;       /* Bo tròn góc */
+    padding: 10px 20px;        /* Khoảng cách trong button */
+    font-size: 16px;           /* Kích thước chữ */
+    cursor: pointer;          /* Con trỏ chuột thay đổi khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+button:hover {
+    background-color: #87cefa; /* Màu xanh dương sáng hơn khi hover */
+}

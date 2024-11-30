@@ -38,7 +38,7 @@
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="4.0" layoutY="200.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
+            <JFXButton layoutX="8.0" layoutY="206.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
                <graphic>
                   <FontAwesomeIconView glyphName="USER" />
                </graphic>
@@ -46,7 +46,7 @@
                   <Font size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="6.0" layoutY="279.0" text="Loan">
+            <JFXButton layoutX="6.0" layoutY="279.0" onAction="#switchToQuanLyMuonTraSach" text="Loan">
                <graphic>
                   <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
                </graphic>

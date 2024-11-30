@@ -10,9 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -322,4 +320,15 @@ public class BookManagementController {
         stage.setScene(scene);
         stage.show();
     }
+
+    // Hàm chuyển sang mục Quản lý mượn trả sách
+    public void switchToQuanLyMuonTraSach (ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("LoanManagement.fxml"));
+        Scene scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 }
