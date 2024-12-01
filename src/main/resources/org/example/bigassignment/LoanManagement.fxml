@@ -70,10 +70,15 @@
               </columns>
             </TableView>
             <Button layoutX="229.0" layoutY="392.0" mnemonicParsing="false" onAction="#openRegisterLoanScene" text="Đăng ký mượn sách" />
-            <Button layoutX="492.0" layoutY="392.0" mnemonicParsing="false" text="Đăng ký trả sách" />
+            <Button layoutX="492.0" layoutY="392.0" mnemonicParsing="false" onAction="#openReturnedLoanScene" text="Đăng ký trả sách" />
             <Button layoutX="745.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToQuanLyMuonTraSach" prefHeight="25.0" prefWidth="28.0">
                <graphic>
-                  <FontAwesomeIconView glyphName="REFRESH" />
+                  <FontAwesomeIconView fill="#006aff" glyphName="REFRESH" selectionFill="#0084ff" />
+               </graphic>
+            </Button>
+            <Button layoutX="745.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleDeleteLoan" prefHeight="25.0" prefWidth="28.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#ff0404" glyphName="TRASH" selectionFill="RED" />
                </graphic>
             </Button>
          </children></AnchorPane>

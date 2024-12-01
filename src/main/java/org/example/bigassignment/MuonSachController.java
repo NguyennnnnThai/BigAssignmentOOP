@@ -53,15 +53,16 @@ public class MuonSachController {
         }
 
         // Kiểm tra ID sách và số lượng sách
+        if (!isAvailableBookQuantity(bookId)) {
+            showAlert(AlertType.ERROR, "Lỗi", "Số lượng sách không đủ để mượn.");
+            return;
+        }
         if (!isValidBookId(bookId)) {
             showAlert(AlertType.ERROR, "Lỗi", "ID sách không tồn tại.");
             return;
         }
 
-        if (!isAvailableBookQuantity(bookId)) {
-            showAlert(AlertType.ERROR, "Lỗi", "Số lượng sách không đủ để mượn.");
-            return;
-        }
+
 
         // Kiểm tra ID người mượn
         if (!isValidBorrowerId(borrowerId)) {
