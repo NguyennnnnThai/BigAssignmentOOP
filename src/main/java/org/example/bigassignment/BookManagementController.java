@@ -351,5 +351,22 @@ public class BookManagementController {
         stage.show();
     }
 
+    // Hàm đăng xuất
+    public void logOut(ActionEvent event) throws IOException {
+        // Hiển thị hộp thoại xác nhận đăng xuất
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Xác nhận đăng xuất");
+        confirmationAlert.setHeaderText(null);
+        confirmationAlert.setContentText("Bạn có chắc chắn muốn đăng xuất không?");
+
+        // Nếu người dùng chọn "OK", thực hiện đăng xuất
+        if (confirmationAlert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK) {
+            root = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
+            Scene scene = new Scene(root);
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
 
 }

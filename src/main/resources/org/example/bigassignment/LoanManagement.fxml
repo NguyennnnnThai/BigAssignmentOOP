@@ -17,6 +17,14 @@
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
                     </font></Label>
+            <Button layoutX="803.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" textFill="#a31f1f">
+               <graphic>
+                  <FontAwesomeIconView fill="RED" glyphName="SIGN_OUT" selectionFill="RED" size="30" />
+               </graphic>
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="105.0" stylesheets="@CSS/outfit.css">
