@@ -30,7 +30,7 @@ public class BorrowerService {
         return borrowers;
     }
 
-    // Hàm thêm một người mượn mới
+    // Hàm thêm một người mượn mới.
     public static void addBorrower(Borrower borrower) {
         String sql = "INSERT INTO borrower (full_name, age, phone_number) VALUES (?, ?, ?)";
 
@@ -40,7 +40,6 @@ public class BorrowerService {
             stmt.setString(1, borrower.getFullName());
             stmt.setInt(2, borrower.getAge());
             stmt.setString(3, borrower.getPhoneNumber());
-
             stmt.executeUpdate();
 
             // Lấy ID tự động từ cơ sở dữ liệu và gán cho Borrower

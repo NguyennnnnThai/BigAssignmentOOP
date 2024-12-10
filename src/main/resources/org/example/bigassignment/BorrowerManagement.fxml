@@ -46,7 +46,7 @@
                         <Font size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutY="197.0" text="Borrower" textFill="#1c1c99">
+                <JFXButton layoutX="3.0" layoutY="199.0" text="Borrower" textFill="#1c1c99">
                     <graphic>
                         <FontAwesomeIconView glyphName="USER" />
                     </graphic>
