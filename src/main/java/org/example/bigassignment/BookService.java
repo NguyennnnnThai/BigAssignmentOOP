@@ -31,6 +31,7 @@ public class BookService {
         return books;
     }
 
+    // Hàm thêm 1 cuốn sách
     public static void addBook(Book book) {
         String sql = "INSERT INTO book (title, author, category, available_quantity, total_quantity) VALUES (?, ?, ?, ?, ?)";
 
@@ -55,6 +56,7 @@ public class BookService {
         }
     }
 
+    // Hàm cập nhật 1 cuốn sách
     public static void updateBook(Book book) {
         String sql = "UPDATE book SET title = ?, author = ?, category = ?, available_quantity = ?, total_quantity = ? WHERE id = ?";
 
@@ -74,6 +76,7 @@ public class BookService {
         }
     }
 
+    // Xóa cuốn sách khỏi DB
     public static void deleteBook(int id) throws SQLException {
         String query = "DELETE FROM book WHERE id = ?";
         try (Connection connection = DatabaseConnection.getConnection();
@@ -82,6 +85,8 @@ public class BookService {
             statement.executeUpdate();
         }
     }
+
+    // Cập nhật laị giá trị bảng
     public static void reorderBookIds() throws SQLException {
         try (Connection connection = DatabaseConnection.getConnection();
              Statement statement = connection.createStatement()) {

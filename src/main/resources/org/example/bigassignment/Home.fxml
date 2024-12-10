@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -14,6 +15,14 @@
                     <font>
                         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
                     </font></Label>
+            <Button layoutX="802.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" textFill="#a31f1f">
+               <graphic>
+                  <FontAwesomeIconView fill="RED" glyphName="SIGN_OUT" selectionFill="RED" size="30" />
+               </graphic>
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="105.0" stylesheets="@CSS/outfit.css">
@@ -34,7 +43,7 @@
                         <Font size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="8.0" layoutY="199.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
+                <JFXButton layoutX="8.0" layoutY="206.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
                     <graphic>
                         <FontAwesomeIconView glyphName="USER" />
                     </graphic>
@@ -42,7 +51,7 @@
                         <Font size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="6.0" layoutY="279.0" text="Loan">
+                <JFXButton layoutX="6.0" layoutY="279.0" onAction="#switchToQuanLyMuonTraSach" text="Loan">
                     <graphic>
                         <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
                     </graphic>

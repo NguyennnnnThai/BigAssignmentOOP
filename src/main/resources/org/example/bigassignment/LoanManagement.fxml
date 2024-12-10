@@ -6,11 +6,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.BorrowerManagementController">
+<AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.LoanManagementController">
     <children>
         <AnchorPane id="VienNgang" prefHeight="80.0" prefWidth="880.0" stylesheets="@CSS/outfit.css">
             <children>
@@ -19,12 +18,12 @@
                         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
                     </font></Label>
             <Button layoutX="803.0" layoutY="21.0" mnemonicParsing="false" onAction="#logOut" textFill="#a31f1f">
-               <font>
-                  <Font name="Arial Narrow Bold" size="12.0" />
-               </font>
                <graphic>
                   <FontAwesomeIconView fill="RED" glyphName="SIGN_OUT" selectionFill="RED" size="30" />
                </graphic>
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
             </Button>
             </children>
         </AnchorPane>
@@ -46,43 +45,50 @@
                         <Font size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="3.0" layoutY="199.0" text="Borrower" textFill="#1c1c99">
+                <JFXButton layoutX="8.0" layoutY="206.0" onAction="#switchToQuanLyNguoiMuon" text="Borrower">
                     <graphic>
                         <FontAwesomeIconView glyphName="USER" />
                     </graphic>
                     <font>
-                        <Font name="System Bold Italic" size="15.0" />
+                        <Font size="14.0" />
                     </font>
                 </JFXButton>
-                <JFXButton layoutX="6.0" layoutY="279.0" onAction="#switchToQuanLyMuonTraSach" text="Loan">
+                <JFXButton layoutX="6.0" layoutY="279.0" text="Loan" textFill="#1c1c99">
                     <graphic>
                         <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
                     </graphic>
                     <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold Italic" size="16.0" />
                     </font>
                 </JFXButton>
             </children>
         </AnchorPane>
         <AnchorPane layoutX="106.0" layoutY="80.0" prefHeight="440.0" prefWidth="773.0">
          <children>
-            <TableView fx:id="borrowerTable" layoutX="22.0" layoutY="21.0" prefHeight="407.0" prefWidth="485.0">
+            <TableView fx:id="loanTable" layoutX="9.0" layoutY="9.0" prefHeight="358.0" prefWidth="730.0">
               <columns>
-                <TableColumn fx:id="idColumn" prefWidth="50.5" text="ID" />
-                <TableColumn fx:id="fullNameColumn" prefWidth="244.0" text="Fullname" />
-                  <TableColumn fx:id="ageColumn" prefWidth="73.0" text="Age" />
-                  <TableColumn fx:id="phoneNumberColumn" prefWidth="116.0" text="PhoneNumber" />
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="bookIdColumn" prefWidth="75.0" text="BookID" />
+                  <TableColumn fx:id="borrowerIdColumn" prefWidth="81.0" text="BorrowerID" />
+                  <TableColumn fx:id="loanDateColumn" prefWidth="117.5" text="Loan Date" />
+                  <TableColumn fx:id="dueDateColumn" prefWidth="107.5" text="Due Date" />
+                  <TableColumn fx:id="returnDateColumn" prefWidth="111.0" text="Returned Date" />
+                  <TableColumn fx:id="statusColumn" minWidth="7.5" prefWidth="89.5" text="Status" />
+                  <TableColumn fx:id="fineColumn" prefWidth="76.5" text="Fine" />
               </columns>
             </TableView>
-            <TextField fx:id="fullNameField" layoutX="610.0" layoutY="61.0" />
-            <TextField fx:id="ageField" layoutX="610.0" layoutY="142.0" prefHeight="25.0" prefWidth="68.0" />
-            <TextField fx:id="phoneNumberField" layoutX="610.0" layoutY="230.0" />
-            <Label layoutX="545.0" layoutY="65.0" text="Fullname" />
-            <Label layoutX="526.0" layoutY="234.0" text="Phone Number" />
-            <Label layoutX="556.0" layoutY="146.0" text="Age" />
-            <Button layoutX="569.0" layoutY="297.0" mnemonicParsing="false" onAction="#addBorrower" stylesheets="@CSS/button.css" text="ADD" />
-            <Button layoutX="621.0" layoutY="352.0" mnemonicParsing="false" onAction="#deleteBorrower" text="DELETE" />
-            <Button layoutX="692.0" layoutY="297.0" mnemonicParsing="false" onAction="#updateBorrower" text="UPDATE" />
+            <Button layoutX="229.0" layoutY="392.0" mnemonicParsing="false" onAction="#openRegisterLoanScene" text="Đăng ký mượn sách" />
+            <Button layoutX="492.0" layoutY="392.0" mnemonicParsing="false" onAction="#openReturnedLoanScene" text="Đăng ký trả sách" />
+            <Button layoutX="745.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToQuanLyMuonTraSach" prefHeight="25.0" prefWidth="28.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#006aff" glyphName="REFRESH" selectionFill="#0084ff" />
+               </graphic>
+            </Button>
+            <Button layoutX="745.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleDeleteLoan" prefHeight="25.0" prefWidth="28.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#ff0404" glyphName="TRASH" selectionFill="RED" />
+               </graphic>
+            </Button>
          </children></AnchorPane>
     </children>
 </AnchorPane>

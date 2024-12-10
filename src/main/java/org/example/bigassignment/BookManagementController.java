@@ -10,9 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -103,23 +101,22 @@ public class BookManagementController {
             int availableQuantity = Integer.parseInt(availableQuantityField.getText());
             int totalQuantity = Integer.parseInt(totalQuantityField.getText());
 
-            // Kiểm tra nếu availableQuantity >= totalQuantity
-            if (availableQuantity > totalQuantity) {
-                // Hiển thị cảnh báo nếu availableQuantity >= totalQuantity
+            // Kiểm tra nếu availableQuantity hoặc totalQuantity <= 0
+            if (availableQuantity < 0 || totalQuantity < 0) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Lỗi");
                 alert.setHeaderText(null);
-                alert.setContentText("Số lượng có sẵn không được lớn hơn tổng số lượng!");
+                alert.setContentText("Số lượng sách phải không được nhỏ hơn 0!");
                 alert.showAndWait();
                 return;
             }
 
-            // Kiểm tra nếu totalQuantity là số hợp lệ
-            if (totalQuantity <= 0) {
+            // Kiểm tra nếu availableQuantity > totalQuantity
+            if (availableQuantity > totalQuantity) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Lỗi");
                 alert.setHeaderText(null);
-                alert.setContentText("Tổng số lượng phải lớn hơn 0!");
+                alert.setContentText("Số lượng có sẵn không được lớn hơn tổng số lượng!");
                 alert.showAndWait();
                 return;
             }
@@ -165,6 +162,7 @@ public class BookManagementController {
 
 
 
+
     private void clearFields() {
         titleField.clear();
         categoryField.clear();
@@ -199,6 +197,26 @@ public class BookManagementController {
                 String newCategory = categoryField.getText();
                 int newAvailableQuantity = Integer.parseInt(availableQuantityField.getText());
                 int newTotalQuantity = Integer.parseInt(totalQuantityField.getText());
+
+                // Kiểm tra nếu availableQuantity hoặc totalQuantity < 0
+                if (newAvailableQuantity < 0 || newTotalQuantity < 0) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Lỗi");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Số lượng sách không được nhỏ hơn 0!");
+                    alert.showAndWait();
+                    return;
+                }
+
+                // Kiểm tra nếu availableQuantity > totalQuantity
+                if (newAvailableQuantity > newTotalQuantity) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Lỗi");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Số lượng có sẵn không được lớn hơn tổng số lượng!");
+                    alert.showAndWait();
+                    return;
+                }
 
                 // Cập nhật dữ liệu của đối tượng trong TableView
                 selectedBook.setTitle(newTitle);
@@ -248,6 +266,7 @@ public class BookManagementController {
             alert.showAndWait();
         }
     }
+
 
     @FXML
     public void deleteBook(ActionEvent event) {
@@ -322,4 +341,32 @@ public class BookManagementController {
         stage.setScene(scene);
         stage.show();
     }
+
+    // Hàm chuyển sang mục Quản lý mượn trả sách
+    public void switchToQuanLyMuonTraSach (ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("LoanManagement.fxml"));
+        Scene scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // Hàm đăng xuất
+    public void logOut(ActionEvent event) throws IOException {
+        // Hiển thị hộp thoại xác nhận đăng xuất
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Xác nhận đăng xuất");
+        confirmationAlert.setHeaderText(null);
+        confirmationAlert.setContentText("Bạn có chắc chắn muốn đăng xuất không?");
+
+        // Nếu người dùng chọn "OK", thực hiện đăng xuất
+        if (confirmationAlert.showAndWait().orElse(ButtonType.CANCEL) == ButtonType.OK) {
+            root = FXMLLoader.load(getClass().getResource("LoginScene.fxml"));
+            Scene scene = new Scene(root);
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
 }
