@@ -1,15 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.InterfaceSceneController">
+<AnchorPane prefHeight="520.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.bigassignment.InterfaceSceneController">
    <children>
-      <Label fx:id="nameLabel" layoutX="87.0" layoutY="58.0" text="hello ">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <AnchorPane id="VienNgang" prefHeight="80.0" prefWidth="880.0" stylesheets="@CSS/outfit.css">
+         <children>
+            <Label id="LabelVien" alignment="CENTER" layoutX="119.0" layoutY="24.0" prefHeight="41.0" prefWidth="150.0" stylesheets="@CSS/outfit.css" text="Have a nice day !" textFill="#ece3e3" />
+            <ChoiceBox fx:id="myChoiceBox" layoutX="769.0" layoutY="30.0" prefHeight="28.0" prefWidth="46.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="VienDoc" layoutY="80.0" prefHeight="440.0" prefWidth="78.0" stylesheets="@CSS/outfit.css">
+         <children>
+            <JFXButton id="buttonHide" layoutX="1.0" layoutY="-1.0" minWidth="46.0" prefHeight="57.0" prefWidth="78.0" stylesheets="@CSS/outfit.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="HOME" size="20" text="" wrappingWidth="19.199975585937523">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="buttonHide" layoutX="13.0" layoutY="79.0" minWidth="46.0" onAction="#switchToBookManagement" prefHeight="34.0" prefWidth="46.0" stylesheets="@CSS/outfit.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOK" size="20" text="" />
+               </graphic>
+            </JFXButton>
+            <JFXButton id="buttonHide" layoutX="18.0" layoutY="147.0" minWidth="37.0" prefHeight="28.0" prefWidth="37.0" stylesheets="@CSS/outfit.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USER" size="20" />
+               </graphic>
+            </JFXButton>
+            <JFXButton id="buttonHide" layoutX="17.0" layoutY="286.0" minWidth="39.0" prefHeight="28.0" prefWidth="39.0" stylesheets="@CSS/outfit.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="LIST" size="20" />
+               </graphic>
+            </JFXButton>
+            <JFXButton id="buttonHide" layoutX="16.0" layoutY="220.0" minWidth="39.0" prefHeight="28.0" prefWidth="39.0" stylesheets="@CSS/outfit.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="EDIT" size="20" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="80.0" layoutY="80.0" prefHeight="440.0" prefWidth="799.0">
+         <children>
+            <AnchorPane id="hopThongTin" layoutX="21.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <FontAwesomeIconView glyphName="FILE" layoutX="15.0" layoutY="31.0" size="20" />
+                  <Label layoutX="84.0" layoutY="8.0" text="Số sách">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalBooksLabel" layoutX="97.0" layoutY="35.0" text="Label" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="hopThongTin" layoutX="221.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <FontAwesomeIconView glyphName="USERS" layoutX="14.0" layoutY="31.0" size="20" />
+                  <Label layoutX="66.0" layoutY="8.0" text="Số sinh viên">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalUsersLabel" layoutX="85.0" layoutY="35.0" text="Label" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="hopThongTin" layoutX="614.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <FontAwesomeIconView glyphName="BAN" layoutX="14.0" layoutY="31.0" size="20" />
+                  <Label layoutX="61.0" layoutY="8.0" text="Số SV bị cấm">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="hopThongTin" layoutX="420.0" layoutY="14.0" prefHeight="70.0" prefWidth="170.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <FontAwesomeIconView glyphName="HOURGLASS_END" layoutX="14.0" layoutY="31.0" size="20" />
+                  <Label layoutX="47.0" layoutY="8.0" text="Số sách quá hạn">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="TIMES" layoutX="32.0" layoutY="37.0" size="12" />
+                  <Label fx:id="overdueBooksLabel" layoutX="85.0" layoutY="35.0" text="Label" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="21.0" layoutY="100.0" prefHeight="150.0" prefWidth="544.0">
+               <children>
+                  <LineChart id="hopThongTin" fx:id="borrowLineChart" layoutX="-1.0" prefHeight="220.0" prefWidth="520.0" stylesheets="@CSS/outfit.css" title="Thống kê mượn sách" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <xAxis>
+                      <CategoryAxis label="Tháng" maxWidth="80.0" minWidth="80.0" prefHeight="19.0" prefWidth="80.0" side="LEFT" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="Số lượng người mượn" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="hopThongTin" layoutX="582.0" layoutY="100.0" prefHeight="158.0" prefWidth="202.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <BarChart fx:id="bookDistributionBarChart" layoutX="-137.0" layoutY="-123.0" prefHeight="100.0" prefWidth="201.6" title="Phân bố" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="clock-label" layoutX="583.0" layoutY="273.0" prefHeight="150.0" prefWidth="202.0" stylesheets="@CSS/Clock.css">
+               <children>
+                  <Label id="clock-label" fx:id="clockLabel" alignment="CENTER" layoutX="11.200000000000001" layoutY="10.600000000000001" prefHeight="200.0" prefWidth="200.0" stylesheets="@CSS/Clock.css" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="hopThongTin" layoutX="414.0" layoutY="273.0" maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@CSS/outfit.css">
+               <children>
+                  <PieChart fx:id="borrowPieChart" clockwise="false" labelLineLength="10.0" layoutX="13.600000000000001" layoutY="1.6" prefHeight="150.0" prefWidth="150.0" title="Tỉ lệ sách đã mượn" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0" />
+               </children></AnchorPane>
+            <TableView fx:id="overdueTable" layoutX="21.0" layoutY="273.0" prefHeight="147.0" prefWidth="373.0">
+              <columns>
+                <TableColumn fx:id="bookTitleColumn" prefWidth="124.3" text="title" />
+                <TableColumn fx:id="bookIdColumn" prefWidth="124.3" text="borrow_id" />
+                  <TableColumn fx:id="borrowIdColumn" prefWidth="124.3" text="book_id" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

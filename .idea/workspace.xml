@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="2b50d9bc-6fa4-4de4-b055-7fe5eb1bb4f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/bigassignment/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/bigassignment/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/HelloApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/InterfaceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/InterfaceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/InterfaceSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/InterfaceSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LibrarianDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LibrarianDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LoginScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LoginScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LoginSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/LoginSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/bigassignment/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/bigassignment/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
