@@ -86,17 +86,17 @@
             <Label layoutX="553.0" layoutY="224.0" text="Available" />
             <Label layoutX="554.0" layoutY="162.0" text="Category" />
             <Label layoutX="559.0" layoutY="101.0" text="Author" />
-            <Button layoutX="581.0" layoutY="337.0" mnemonicParsing="false" onAction="#addBook" text="ADD">
+            <Button id="button" layoutX="581.0" layoutY="337.0" mnemonicParsing="false" onAction="#addBook" text="ADD">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="685.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateBook" text="UPDATE">
+            <Button id="button" layoutX="685.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateBook" text="UPDATE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="627.0" layoutY="375.0" mnemonicParsing="false" onAction="#deleteBook" text="DELETE">
+            <Button id="button" layoutX="624.0" layoutY="382.0" mnemonicParsing="false" onAction="#deleteBook" text="DELETE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

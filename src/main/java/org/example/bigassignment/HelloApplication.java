@@ -12,7 +12,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Image icon = new Image(HelloApplication.class.getResource("/org/example/bigassignment/Image/icon.png").toString());
+        Image icon = new Image(HelloApplication.class.getResource("/org/example/bigassignment/Image/anh_sach.jpg").toString());
         stage.getIcons().add(icon);
         stage.setTitle("Library Management");
         //  stage.setResizable(false); // hàm giúp không cho phép thay đổi kích thước cửa sổ

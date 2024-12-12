@@ -292,8 +292,6 @@ public class BookManagementController {
                     // Xóa dữ liệu trong các trường nhập liệu
                     clearFields();
 
-                    // Làm mới lại danh sách ID trong cơ sở dữ liệu
-                    BookService.reorderBookIds();
 
                     // Cập nhật lại danh sách trong TableView
                     bookTable.setItems(FXCollections.observableArrayList(BookService.getAllBooks()));

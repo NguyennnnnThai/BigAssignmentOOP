@@ -33,16 +33,18 @@ public class TraSachController {
 
     private LoanService loanService; // Dịch vụ LoanService để lấy thông tin
 
+    private boolean checkID = false; // Kiểm tra xem ấn nút check ID chưa
     // Constructor
     public TraSachController() {
         this.loanService = new LoanService(); // Khởi tạo dịch vụ LoanService
     }
 
+
     // Phương thức xử lý sự kiện khi ấn nút Check
     @FXML
     private void handleCheckLoan() {
         String loanIdText = loanIdField.getText();
-
+        checkID = true;
         if (loanIdText.isEmpty()) {
             showAlert(AlertType.WARNING, "Cảnh báo", "Vui lòng nhập Loan ID!");
             return;
@@ -94,6 +96,10 @@ public class TraSachController {
             return;
         }
 
+        if (checkID == false) {
+            showAlert(AlertType.WARNING, "Cảnh báo", "Vui lòng điền kiểm tra Loan ID");
+            return;
+        }
         // Kiểm tra nếu ngày trả sách phải sau ngày mượn
         if (returnedDate.isBefore(loanDate)) {
             showAlert(AlertType.WARNING, "Cảnh báo", "Ngày trả sách không thể trước ngày mượn!");

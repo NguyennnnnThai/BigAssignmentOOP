@@ -13,7 +13,7 @@
             Connection connection = null;
             try {
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("Kết nối thành công với cơ sở dữ liệu!");
+                //System.out.println("Kết nối thành công với cơ sở dữ liệu!");
             } catch (SQLException e) {
                 System.out.println("Lỗi kết nối: " + e.getMessage());
             }

@@ -1,6 +1,6 @@
 /* styles.css */
 
-button {
+.button {
     background-color: #add8e6; /* Màu xanh blue nhạt */
     color: white;              /* Màu chữ trắng */
     border: none;              /* Không viền */
@@ -11,6 +11,6 @@ button {
     transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
 }
 
-button:hover {
+.button:hover {
     background-color: #87cefa; /* Màu xanh dương sáng hơn khi hover */
 }

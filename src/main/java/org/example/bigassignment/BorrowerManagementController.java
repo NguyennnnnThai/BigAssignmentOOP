@@ -253,8 +253,7 @@ public class BorrowerManagementController {
                     // Xóa dữ liệu trong các trường nhập liệu (nếu có)
                     clearFields();
 
-                    // Làm mới lại danh sách ID trong cơ sở dữ liệu nếu cần thiết
-                    BorrowerService.reorderBorrowerIds();
+
 
                     // Cập nhật lại danh sách trong TableView
                     borrowerTable.setItems(FXCollections.observableArrayList(BorrowerService.getAllBorrowers()));
