@@ -44,7 +44,7 @@ public class VideoController implements Initializable {
     private void transitionToNextScene() {
         try {
             // Tải FXML của InterfaceScene
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("InterfaceScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Scene nextScene = new Scene(loader.load());
 
             // Lấy Stage hiện tại và thay đổi Scene

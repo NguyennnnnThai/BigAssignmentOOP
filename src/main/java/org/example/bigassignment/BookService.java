@@ -86,6 +86,7 @@ public class BookService {
         }
     }
 
+
     // Cập nhật laị giá trị bảng
     public static void reorderBookIds() throws SQLException {
         try (Connection connection = DatabaseConnection.getConnection();

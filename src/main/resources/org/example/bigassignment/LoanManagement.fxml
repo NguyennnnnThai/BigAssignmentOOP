@@ -77,8 +77,14 @@
                   <TableColumn fx:id="fineColumn" prefWidth="76.5" text="Fine" />
               </columns>
             </TableView>
-            <Button layoutX="229.0" layoutY="392.0" mnemonicParsing="false" onAction="#openRegisterLoanScene" text="Đăng ký mượn sách" />
-            <Button layoutX="492.0" layoutY="392.0" mnemonicParsing="false" onAction="#openReturnedLoanScene" text="Đăng ký trả sách" />
+            <Button layoutX="229.0" layoutY="392.0" mnemonicParsing="false" onAction="#openRegisterLoanScene" text="Đăng ký mượn sách">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Button>
+            <Button layoutX="492.0" layoutY="392.0" mnemonicParsing="false" onAction="#openReturnedLoanScene" text="Đăng ký trả sách">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font></Button>
             <Button layoutX="745.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToQuanLyMuonTraSach" prefHeight="25.0" prefWidth="28.0">
                <graphic>
                   <FontAwesomeIconView fill="#006aff" glyphName="REFRESH" selectionFill="#0084ff" />
